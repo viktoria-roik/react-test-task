@@ -1,0 +1,19 @@
+@import './vars';
+
+@mixin onTablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin onTablet-L {
+  @media (min-width: $tablet-l-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}

@@ -1,0 +1,10 @@
+body {
+  font-family: 'Syne', sans-serif;
+  background-color: var(--body-background-color);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

@@ -1,0 +1,12 @@
+:root {
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --blue-bg-color: #d3eaff;
+  --gray-bg-color: #ececec;
+  --black-text-color: #1e1e1e;
+  --gray-text-color: #556b84;
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}
