@@ -1,2 +1,15 @@
 @import '../../styles/utils/mixins';
 @import '../../styles/utils/vars';
+
+.header {
+  padding: 19px 80px 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 10;
+  background: rgba(30, 30, 30, 0.48);
+
+  // position: relative;
+  // background-color: black;
+}

@@ -6,14 +6,50 @@
   }
 }
 
-@mixin onTablet-L {
-  @media (min-width: $tablet-l-width) {
-    @content;
-  }
-}
-
 @mixin onDesktop {
   @media (min-width: $desktop-width) {
     @content;
   }
+}
+
+@mixin defaultHover {
+  transition: background-color fill $transition-duration;
+  &:hover {
+    background-color: var(--blue-bg-color);
+    fill: var(--white-color);
+  }
+}
+
+@mixin buttonHover {
+  transition:
+    color,
+    background-color $transition-duration;
+
+  &:hover {
+    background-color: var(--black-color);
+    color: var(--blue-bg-color);
+  }
+}
+
+@mixin buttonFavStyles {
+  padding: 14.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--gray-bg-color);
+}
+
+@mixin blueButtonStyles {
+  padding: 12px 33px;
+  border: none;
+  background-color: var(--blue-bg-color);
+
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--black-color);
+
+  cursor: pointer;
 }
