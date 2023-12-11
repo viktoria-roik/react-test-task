@@ -1,0 +1,22 @@
+@import '../../../styles/utils';
+
+.header-btn {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  &__favorite-btn {
+    @include buttonFavStyles;
+    @include defaultHover;
+  }
+
+  &__favorite-icon {
+    width: 100%;
+  }
+
+  &__sign-btn {
+    @include blueButtonStyles;
+
+    @include buttonHover;
+  }
+}
