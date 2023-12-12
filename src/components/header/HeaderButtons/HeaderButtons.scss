@@ -8,6 +8,14 @@
   &__favorite-btn {
     @include buttonFavStyles;
     @include defaultHover;
+
+    &.is-active {
+      background-color: var(--pink-active-color);
+
+      .header-btn__favorite-icon {
+        fill: var(--white-color);
+      }
+    }
   }
 
   &__favorite-icon {

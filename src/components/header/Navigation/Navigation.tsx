@@ -2,13 +2,6 @@ import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
 import './Navigation.scss';
 
-const languages = [
-  { code: 'ukr', name: 'УКР' },
-  { code: 'en', name: 'ENG' },
-  { code: 'fr', name: 'FR' },
-  { code: 'pl', name: 'PL' },
-];
-
 export const Navigation: React.FC = () => {
   return (
     <nav className="nav">

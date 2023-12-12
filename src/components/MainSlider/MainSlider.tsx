@@ -74,57 +74,5 @@ export const MainSlider = () => {
         </SwiperSlide>
       ))}
     </Swiper>
-
-    // <section className="slider">
-    // <Swiper
-    //   modules={[Navigation, Pagination, Autoplay]}
-    //   className="swiper"
-    //   speed={800}
-    //   autoplay={{
-    //     delay: 3000,
-    //     disableOnInteraction: false,
-    //   }}
-    //   loop
-    //   navigation
-    //   pagination={{ clickable: true }}
-    // >
-    //   {slides.map(slideInfo => (
-    //     <SwiperSlide key={slideInfo.alt} className="swiper-slide">
-    //       <div className="swiper-slide__img-box">
-    //         <img
-    //           className="swiper-slide__img"
-    //           src={slideInfo.image}
-    //           alt={slideInfo.alt}
-    //         />
-    //       </div>
-    // <div className="swiper-slide__text">
-    // <h1 className="swiper-slide__title">
-    //   the space is waiting for
-    //    <span className="swiper-slide__title--last-word">you</span>
-    // </h1>
-
-    // <div className="swiper-slide__btn-container">
-    // <button
-    //   className="swiper-slide__btn"
-    //   onClick={() => {
-    //     const toursElement = document.getElementById('tours');
-
-    //     if (toursElement) {
-    //       toursElement.scrollIntoView({ behavior: 'smooth' });
-    //     }
-    //   }}
-    // >
-    //   Explore tours
-    // </button>
-    //   <ArrowDown  className="swiper-slide__arrow"/>
-    // </div>
-
-    // </div>
-
-    //     </SwiperSlide>
-    //   ))}
-
-    // </Swiper>
-    // </section>
   );
 };

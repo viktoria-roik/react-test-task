@@ -1,0 +1,60 @@
+.favs {
+  position: relative;
+  &__bg {
+    background-image: url('../../assets/slides/slide3.png');
+    width: 100%;
+    height: 440px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -95px;
+
+    z-index: -1;
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+  }
+
+  &__title {
+    color: var(--white-color);
+    text-transform: uppercase;
+
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+  }
+
+  &__clear {
+    display: flex;
+    justify-content: end;
+    padding: 64px 0 40px;
+
+    &--btn {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 24px;
+
+      color: var(--gray-text-color);
+
+      border: none;
+      background-color: transparent;
+
+      cursor: pointer;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
