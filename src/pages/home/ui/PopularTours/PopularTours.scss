@@ -1,0 +1,45 @@
+@import '../../../../styles/utils';
+
+.tours {
+  margin-bottom: 50px;
+  &__container {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 32px;
+    color: var(--black-text-color);
+
+    margin-bottom: 40px;
+  }
+
+  &__arrows {
+    display: flex;
+    gap: 16px;
+
+    &-icons {
+      @include flexCenter;
+      width: 44px;
+      height: 44px;
+      background-color: var(--gray-bg-color);
+      cursor: pointer;
+
+      &-arrow {
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        background-color: var(--blue-bg-color);
+      }
+    }
+  }
+}
