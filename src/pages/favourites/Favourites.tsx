@@ -3,7 +3,8 @@ import { useQuery, gql } from '@apollo/client';
 
 import { Rocket } from 'types/rocket';
 import { useEffect, useState } from 'react';
-import { useFavourites } from 'context/FavsContext';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { favoritesItemsState } from 'provider/FavsProvider';
 
 import './Favourites.scss';
 
@@ -19,7 +20,8 @@ const ROCKETS_QUERY = gql`
 
 export const Favourites = () => {
   const [updatedRockets, setUpdatedRockets] = useState<Rocket[]>([]);
-  const { favoritesItems, clearFavorites } = useFavourites();
+  const favoritesItems = useRecoilValue(favoritesItemsState);
+  const setFavoritesItems = useSetRecoilState(favoritesItemsState);
 
   const { loading, error, data } = useQuery(ROCKETS_QUERY);
 
@@ -36,7 +38,7 @@ export const Favourites = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   const handleClearAll = () => {
-    clearFavorites();
+    setFavoritesItems([]);
   };
 
   return (

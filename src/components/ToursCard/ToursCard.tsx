@@ -7,7 +7,8 @@ import img1 from 'assets/card-img/img1.png';
 // import img2 from 'assets/card-img/img2.png';
 // import img3 from 'assets/card-img/img3.png';
 import classNames from 'classnames';
-import { useFavourites } from 'context/FavsContext';
+import { favoritesItemsState } from 'provider/FavsProvider';
+import { useRecoilState } from 'recoil';
 
 // const imgs = [
 //   {
@@ -29,7 +30,8 @@ type Props = {
 };
 
 export const ToursCard: React.FC<Props> = ({ rocket }) => {
-  const { addToFavorites, checkInFav } = useFavourites();
+  const [favoritesItems, setFavoritesItems] =
+    useRecoilState(favoritesItemsState);
   const { name, description, id } = rocket;
   const [isTruncated, setIsTruncated] = useState(true);
 
@@ -37,7 +39,20 @@ export const ToursCard: React.FC<Props> = ({ rocket }) => {
     setIsTruncated(prevState => !prevState);
   };
 
-  const isInFav = checkInFav(id);
+  const isInFav = favoritesItems.some(item => item.id === id);
+
+  const addToFavorites = () => {
+    if (isInFav) {
+      setFavoritesItems(prevFavoritesItems =>
+        prevFavoritesItems.filter(item => item.id !== id),
+      );
+    } else {
+      setFavoritesItems(prevFavoritesItems => [
+        ...prevFavoritesItems,
+        { id: id, quantity: 1 },
+      ]);
+    }
+  };
 
   return (
     <div className="tours-card">
@@ -58,22 +73,18 @@ export const ToursCard: React.FC<Props> = ({ rocket }) => {
 
           <div className="info__btn">
             <button className="info__btn__buy ">buy</button>
-
-            {isInFav ? (
-              <button
-                className="info__btn__favorite selected"
-                onClick={() => addToFavorites(id)}
-              >
-                <FavoriteIcon className="info__btn__favorite__icon selected-icon" />
-              </button>
-            ) : (
-              <button
-                className="info__btn__favorite"
-                onClick={() => addToFavorites(id)}
-              >
-                <FavoriteIcon className="info__btn__favorite__icon" />
-              </button>
-            )}
+            <button
+              className={classNames('info__btn__favorite', {
+                selected: isInFav,
+              })}
+              onClick={addToFavorites}
+            >
+              <FavoriteIcon
+                className={classNames('info__btn__favorite__icon', {
+                  'selected-icon': isInFav,
+                })}
+              />
+            </button>
           </div>
         </div>
       </div>
