@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import './App.scss';
 import { Header } from 'components/header';
-import { FavouritesProvider } from 'context/FavsContext';
+import { RecoilRoot } from 'recoil';
 
 const client = new ApolloClient({
   uri: 'https://spacex-production.up.railway.app/',
@@ -13,13 +13,15 @@ const client = new ApolloClient({
 
 export const App = () => {
   return (
+    <RecoilRoot>
+
     <ApolloProvider client={client}>
-      <FavouritesProvider>
         <Header />
         <main style={{ flex: '1' }}>
           <Outlet />
         </main>
-      </FavouritesProvider>
     </ApolloProvider>
+    </RecoilRoot>
+
   );
 };
