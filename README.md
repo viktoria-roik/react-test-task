@@ -3,6 +3,7 @@
 [DEMO link](https://viktoria-roik.github.io/react-test-task/)
 
 **About**
+
   The extraordinary tours website was developed using React, where users can choose a tour according to their preferences.
   I used technologies such as Recoil for component state management, Swiper for easy work with sliders, Sass for clean and reusable CSS styles, BEM methodology for clear style classes.
 
