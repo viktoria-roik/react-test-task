@@ -7,7 +7,3 @@
   --gray-text-color: #556b84;
   --pink-active-color: #dd377d;
 }
-
-* {
-  transition: all 0.3s ease-in-out;
-}

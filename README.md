@@ -2,6 +2,10 @@
 
 [DEMO link](https://viktoria-roik.github.io/react-test-task/)
 
+**About**
+  The extraordinary tours website was developed using React, where users can choose a tour according to their preferences.
+  I used technologies such as Recoil for component state management, Swiper for easy work with sliders, Sass for clean and reusable CSS styles, BEM methodology for clear style classes.
+
 Task:
 Create two pages with static and dynamic content:
 
@@ -13,7 +17,7 @@ Design:
 
 **UI Requirements:**
 
-    HOME PAGE:
+  HOME PAGE:
 
 - Logo in header it’s link which always return to home page
 - Header navigation menu - should have hover effect, home link navigate to home page as logo too, other links don’t have navigating action.
