@@ -56,8 +56,8 @@ export const Favourites = () => {
         </div>
 
         <section className="favs__cards">
-          {updatedRockets.map((rocket: Rocket) => (
-            <ToursCard rocket={rocket} key={rocket.id} />
+          {updatedRockets.map((rocket: Rocket, index: number) => (
+            <ToursCard rocket={rocket} key={rocket.id} cardIndex={index + 1} />
           ))}
         </section>
       </div>

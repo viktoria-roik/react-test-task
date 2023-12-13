@@ -1,25 +1,31 @@
 @import '../../../styles/utils';
 
 .nav {
-  &__ul {
-    display: flex;
-    gap: 32px;
-  }
+  display: none;
 
-  &__link {
-    color: var(--white-color);
-    text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    padding-bottom: 4px;
+  @include onDesktop {
+    display: block;
 
-    &:hover {
-      color: var(--blue-bg-color);
-      border-bottom: 2px solid var(--blue-bg-color);
+    &__ul {
+      display: flex;
+      gap: 32px;
     }
 
-    &.is-active {
-      border-bottom: 1px solid var(--white-color);
+    &__link {
+      color: var(--white-color);
+      text-transform: uppercase;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      padding-bottom: 4px;
+
+      &:hover {
+        color: var(--blue-bg-color);
+        border-bottom: 2px solid var(--blue-bg-color);
+      }
+
+      &.is-active {
+        border-bottom: 1px solid var(--white-color);
+      }
     }
   }
 }

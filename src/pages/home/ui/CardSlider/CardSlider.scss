@@ -21,7 +21,7 @@
   justify-content: center;
 }
 
-.card-slider__pagination {
+.card-slider__bullet {
   width: 24px;
   height: 24px;
   background-color: transparent;
@@ -44,5 +44,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
   }
+}
+
+.swiper-cards .swiper-pagination-bullet-active::before {
+  opacity: 1;
 }

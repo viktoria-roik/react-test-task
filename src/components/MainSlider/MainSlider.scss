@@ -3,8 +3,15 @@
 .swiper {
   position: relative;
   width: 100%;
-  height: 740px;
+  height: 400px;
   top: -95px;
+
+  @include onTablet {
+    height: 400px;
+  }
+  @include onDesktop {
+    height: 740px;
+  }
 
   &-slide {
     margin: 0;
@@ -31,7 +38,7 @@
     }
 
     &__title {
-      padding-top: 17%;
+      padding-top: 25%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -39,25 +46,51 @@
 
       color: var(--white-color);
       text-transform: uppercase;
-      font-size: 48px;
+      font-size: 18px;
       font-weight: 800;
       font-family: 'Syne', sans-serif;
 
       user-select: none;
 
       &--last-word {
-        font-size: 310px;
-        line-height: 250px;
+        font-size: 80px;
+        line-height: 100px;
+      }
+
+      @include onTablet {
+        padding-top: 17%;
+
+        font-size: 30px;
+
+        &--last-word {
+          font-size: 150px;
+          line-height: 170px;
+        }
+      }
+
+      @include onDesktop {
+        padding-top: 239px;
+
+        font-size: 48px;
+
+        &--last-word {
+          font-size: 310px;
+          line-height: 300px;
+        }
       }
     }
 
     &__btn-container {
-      padding-top: 4%;
+      padding-top: 2%;
 
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 18px;
+
+      @include onDesktop {
+        padding-top: 4%;
+      }
     }
 
     &__btn {
@@ -77,34 +110,38 @@
   }
 
   &-pagination {
-    position: absolute;
-    transform: translate(-3%, -1150%);
-    display: flex;
-    justify-content: center;
+    display: none;
 
-    &-bullet {
-      width: 24px;
-      height: 24px;
-      background-color: transparent;
-      border: 1px solid var(--white-color);
-      border-radius: 50%;
-      margin: 0 5px;
-      position: relative;
-      transition: transform 0.3s ease-in-out;
+    @include onDesktop {
+      position: absolute;
+      transform: translate(-3%, -1150%);
+      display: flex;
+      justify-content: center;
 
-      cursor: pointer;
-
-      &::before {
-        content: '';
-        width: 12px;
-        height: 12px;
-        background-color: var(--white-color);
+      &-bullet {
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+        border: 1px solid var(--white-color);
         border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin: 0 5px;
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+
         cursor: pointer;
+
+        &::before {
+          content: '';
+          width: 12px;
+          height: 12px;
+          background-color: var(--white-color);
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          cursor: pointer;
+        }
       }
     }
   }

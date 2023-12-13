@@ -23,8 +23,12 @@
   }
 
   &__sign-btn {
-    @include blueButtonStyles;
+    display: none;
 
-    @include buttonHover;
+    @include onTablet {
+      display: block;
+      @include blueButtonStyles;
+      @include buttonHover;
+    }
   }
 }
