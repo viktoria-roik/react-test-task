@@ -58,17 +58,17 @@ export const CardSlider: React.FC<Props> = ({
         },
         1100: {
           slidesPerView: 3,
-          spaceBetween: 16,
+          spaceBetween: 24,
         },
       }}
       pagination={{
         clickable: true,
-        bulletClass: 'card-slider__pagination',
+        bulletClass: 'card-slider__bullet',
       }}
     >
-      {data.rockets.map((rocket: Rocket) => (
+      {data.rockets.map((rocket: Rocket, index: number) => (
         <SwiperSlide className="swiper-cards-slide" key={rocket.id}>
-          <ToursCard rocket={rocket} />
+          <ToursCard rocket={rocket} cardIndex={index + 1} />
         </SwiperSlide>
       ))}
     </Swiper>

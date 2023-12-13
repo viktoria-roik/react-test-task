@@ -14,14 +14,12 @@ const client = new ApolloClient({
 export const App = () => {
   return (
     <RecoilRoot>
-
-    <ApolloProvider client={client}>
+      <ApolloProvider client={client}>
         <Header />
         <main style={{ flex: '1' }}>
           <Outlet />
         </main>
-    </ApolloProvider>
+      </ApolloProvider>
     </RecoilRoot>
-
   );
 };

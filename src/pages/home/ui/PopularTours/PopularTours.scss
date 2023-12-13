@@ -4,7 +4,12 @@
   margin-bottom: 50px;
   &__container {
     margin: 0 auto;
-    max-width: 1280px;
+    padding: 0 20px;
+
+    @include onDesktop {
+      padding: 0;
+      max-width: 1280px;
+    }
   }
 
   &__top {
